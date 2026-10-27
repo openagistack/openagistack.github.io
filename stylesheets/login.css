@@ -1,0 +1,210 @@
+/* Developer docs sign-in card (overrides/login.html), modelled on the portal's sign-in page: the .techwave_fn_sign
+   rules from its public/css/style.css and app/globals.css, with its dark and light skins mapped onto Material's
+   colour schemes. */
+[data-md-color-scheme="slate"] {
+  --techwave-site-bg-color: #0f0e11;
+  --techwave-some-r-bg-color: #17151b;
+  --techwave-main-color: #7c5fe3;
+  --techwave-main-color1: #8768f8;
+  --techwave-main-color2: #b7a4fb;
+  --techwave-heading-color: #c0bcca;
+  --techwave-body-color: #7e7a86;
+  --techwave-border-color: #312e37;
+  --techwave-button-bg-color: #1c1925;
+  --techwave-hover-color: #fff;
+  --techwave-error-color: #ff6b6b;
+}
+[data-md-color-scheme="default"] {
+  --techwave-site-bg-color: #fff;
+  --techwave-some-r-bg-color: #f5f5f5;
+  --techwave-main-color: #7c5fe3;
+  --techwave-main-color1: #8768f8;
+  --techwave-main-color2: #b7a4fb;
+  --techwave-heading-color: #333;
+  --techwave-body-color: #444;
+  --techwave-border-color: #ddd;
+  --techwave-button-bg-color: #f5f5f5;
+  --techwave-hover-color: #000;
+  --techwave-error-color: #c62828;
+}
+
+.techwave_fn_sign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0 40px;
+}
+.techwave_fn_sign .sign__content {
+  width: 460px;
+  max-width: 100%;
+}
+.techwave_fn_sign .form__content {
+  padding: 40px 44px;
+  border: 1px solid var(--techwave-border-color);
+  border-radius: 8px;
+  background-color: var(--techwave-some-r-bg-color);
+  text-align: center;
+}
+.techwave_fn_sign .sign__logo {
+  margin: 0 0 16px;
+}
+.techwave_fn_sign .site_logo--sign {
+  height: 64px;
+  width: auto;
+}
+.md-typeset .techwave_fn_sign .login__product {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: normal;
+  color: var(--techwave-heading-color);
+}
+.techwave_fn_sign .login__product span {
+  color: var(--techwave-main-color);
+}
+.md-typeset .techwave_fn_sign .login__tagline {
+  margin: 2px 0 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--techwave-border-color);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--techwave-main-color2);
+}
+[data-md-color-scheme="default"] .md-typeset .techwave_fn_sign .login__tagline {
+  color: var(--techwave-main-color);
+}
+.techwave_fn_sign .form__title {
+  margin: 0 0 3px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--techwave-heading-color);
+}
+.md-typeset .techwave_fn_sign .form__subtitle {
+  margin: 12px 0 0;
+  font-size: 15px;
+  color: var(--techwave-body-color);
+}
+
+.md-typeset .techwave_fn_sign .sign__error {
+  margin-top: 20px;
+  color: var(--techwave-error-color);
+}
+.md-typeset .techwave_fn_sign .sign__error p {
+  margin: 0;
+}
+.techwave_fn_sign .sign__error--box {
+  padding: 15px 18px;
+  border: 1px solid rgba(255, 107, 107, 0.45);
+  border-radius: 5px;
+  background-color: rgba(255, 107, 107, 0.08);
+  line-height: 1.6;
+  text-align: left;
+}
+.md-typeset .techwave_fn_sign .sign__error_title {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.techwave_fn_sign .form__alternative {
+  margin-top: 28px;
+}
+/* The pill button with the animated purple gradient border */
+.md-typeset .techwave_fn_button {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 34px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: var(--techwave-button-bg-color);
+  color: var(--techwave-heading-color);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.md-typeset .techwave_fn_button:hover,
+.md-typeset .techwave_fn_button:focus {
+  color: var(--techwave-hover-color);
+}
+.techwave_fn_button span {
+  position: relative;
+  top: 1px;
+  z-index: 5;
+}
+.techwave_fn_button:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px;
+  color: var(--techwave-main-color1);
+  opacity: 0.1;
+}
+.techwave_fn_button:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background: linear-gradient(
+      270deg,
+      var(--techwave-main-color1),
+      var(--techwave-main-color2),
+      var(--techwave-main-color1),
+      var(--techwave-main-color2)
+    )
+    border-box;
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: login-gradient 4s ease alternate infinite;
+}
+.techwave_fn_button:hover:after {
+  animation-duration: 2s;
+}
+@keyframes login-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .techwave_fn_button:after {
+    animation: none;
+  }
+}
+
+.md-typeset .techwave_fn_sign .sign__desc p {
+  margin: 25px 0 0;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: var(--techwave-body-color);
+}
+.md-typeset .techwave_fn_sign .sign__desc a,
+.md-typeset .techwave_fn_sign .login__about {
+  color: var(--techwave-heading-color);
+  text-decoration: none;
+}
+.md-typeset .techwave_fn_sign .sign__desc a:hover {
+  text-decoration: underline;
+}
+.techwave_fn_sign .sign__more {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .techwave_fn_sign .form__content {
+    padding: 32px 22px;
+  }
+}

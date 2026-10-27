@@ -255,3 +255,20 @@
   letter-spacing: -0.025em !important;
   margin: 0 0 1.25rem 0 !important;
 }
+
+/* ==========================================================================
+   Gated developer docs bar (overrides/main.html, only on mkdocs.developers.yml)
+   ========================================================================== */
+.gated-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+}
+
+.gated-bar__signout {
+  font-weight: 600;
+  text-decoration: underline;
+}
